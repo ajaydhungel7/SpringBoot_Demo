@@ -27,7 +27,7 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    #please add mvn clean package command here
+    #please add mvn clean package command hereg
     - name: Build with Maven
       run: ./mvnw clean package -DskipTests
 
