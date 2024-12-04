@@ -33,7 +33,7 @@ jobs:
 
     
     - name: Build Docker image
-      run: ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=springboot-demo
+      run: docker build -t springboot-demo:latest .
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
