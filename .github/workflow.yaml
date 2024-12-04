@@ -26,6 +26,11 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '17'
+
+    #please add mvn clean package command here
+    - name: Build with Maven
+      run: ./mvnw clean package -DskipTests
+
     
     - name: Build Docker image
       run: ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=springboot-demo
