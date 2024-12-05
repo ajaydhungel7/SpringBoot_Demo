@@ -1,17 +1,46 @@
-Project Overview
-This project focuses on deploying a Spring Boot application that interacts with an Amazon DocumentDB (MongoDB-compatible) database. It leverages Terraform for provisioning AWS resources, GitHub Actions for continuous integration (CI), and Kubernetes for deployment. A significant aspect of this project is the use of AWS Secrets Manager for managing application configuration properties securely.
-Key Components
-Spring Boot Application
-The core application is built using Spring Boot, which fetches and stores data in Amazon DocumentDB, providing a robust backend service.
-AWS Resources
-Terraform is utilized to automate the provisioning of necessary AWS resources, including:
-Amazon DocumentDB: The NoSQL database service for data storage.
-IAM Roles: To manage permissions securely.
-CI/CD with GitHub Actions
-GitHub Actions is employed to automate the build, test, and deployment processes. This ensures that any changes made to the codebase are continuously integrated and deployed to the Kubernetes cluster.
-Kubernetes Deployment
-The application is deployed in a Kubernetes cluster, allowing for efficient scaling and management of containerized applications.
-AWS Secrets Manager Integration
-A standout feature of this project is the integration with AWS Secrets Manager. Using the Secrets Store CSI Driver, the application can securely fetch secrets from AWS Secrets Manager and mount them into Kubernetes pods. This allows for sensitive information, such as database credentials and API keys, to be managed securely without hardcoding them into the application.
-Conclusion
-This project exemplifies a modern cloud-native architecture that emphasizes security, scalability, and automation. By utilizing Terraform, GitHub Actions, Kubernetes, and AWS Secrets Manager, it provides a comprehensive solution for deploying a Spring Boot application in a secure and efficient manner.
+# Project Overview
+
+This project demonstrates a modern cloud-native architecture for deploying a Spring Boot application that interacts with Amazon DocumentDB. It emphasizes security, scalability, and automation through the use of Terraform, GitHub Actions, Kubernetes, and AWS Secrets Manager.
+
+## Key Components
+
+### Spring Boot Application
+
+The core of the project is a Spring Boot application that fetches and stores data in Amazon DocumentDB. This provides a robust backend service capable of handling MongoDB-compatible operations.
+
+### AWS Resources
+
+Terraform is used to automate the provisioning of AWS resources, including:
+
+- **Amazon DocumentDB**: A fully managed, MongoDB-compatible database service.
+- **IAM Roles**: For secure management of permissions.
+
+### CI/CD with GitHub Actions
+
+The project utilizes GitHub Actions to automate the build, test, and deployment processes, ensuring continuous integration and deployment to the Kubernetes cluster.
+
+### Kubernetes Deployment
+
+The application is deployed in a Kubernetes cluster, which allows for efficient scaling and management of containerized applications.
+
+### AWS Secrets Manager Integration
+
+A standout feature is the integration with AWS Secrets Manager using the Secrets Store CSI Driver. This allows the application to:
+
+- Securely fetch secrets from AWS Secrets Manager
+- Mount secrets into Kubernetes pods
+- Manage sensitive information like database credentials and API keys without hardcoding
+
+## Implementation Details
+
+1. **Spring Boot Configuration**: The application's `application.properties` file is configured to connect to Amazon DocumentDB using a connection URI string.
+
+2. **Terraform for AWS Resources**: Terraform scripts define and provision the necessary AWS resources, including the DocumentDB cluster and associated IAM roles.
+
+3. **Kubernetes Secrets Management**: The project uses the AWS Secrets Manager integration with Kubernetes to securely manage and inject secrets into the application pods.
+
+4. **CI/CD Pipeline**: GitHub Actions workflows are set up to automate the build and deployment process, ensuring that code changes are continuously integrated and deployed.
+
+## Conclusion
+
+This project exemplifies a secure and efficient approach to deploying a Spring Boot application in a cloud-native environment. By leveraging Terraform, GitHub Actions, Kubernetes, and AWS Secrets Manager, it provides a comprehensive solution that prioritizes security, scalability, and automation in modern application deployment.
