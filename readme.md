@@ -14,6 +14,7 @@ Terraform is used to automate the provisioning of AWS resources, including:
 
 - **Amazon DocumentDB**: A fully managed, MongoDB-compatible database service.
 - **IAM Roles**: For secure management of permissions.
+- **EKS Cluster**: For Kubernetes Cluster
 
 ### CI/CD with GitHub Actions
 
